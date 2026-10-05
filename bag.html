@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bag — ELMA3</title>
+  <meta name="description" content="Review the pieces you designed, apply a promo code and check out. Saved designs are waiting for you here too.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Web fonts load without blocking the page (a slow or blocked font
+       server must never leave the bag blank); system fonts show meanwhile. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/bag.css">
+  <script src="js/garments.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/bag.js" defer></script>
+</head>
+<body data-page="bag">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="globalnav-root"></div>
+
+  <main id="main" class="bag-main">
+
+    <!-- =========================================================
+         VIEW 1 — Bag with items (filled in by js/bag.js)
+         ========================================================= -->
+    <section class="bag-view bag-view--items" data-view="items" aria-labelledby="bag-title">
+      <div class="container-wide">
+
+        <header class="bag-head">
+          <div class="bag-head__copy">
+            <h1 class="headline-lg bag-head__title" id="bag-title" tabindex="-1">Your pieces come to <span class="price" data-bind="total">0,000&nbsp;DT</span>.</h1>
+            <p class="bag-head__sub" data-bind="sub">Free 30-day returns on every order.</p>
+
+            <!-- Free-shipping progress -->
+            <div class="bag-meter" data-meter hidden>
+              <p class="bag-meter__text">
+                <span class="bag-meter__icon" aria-hidden="true">
+                  <svg class="bag-meter__truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M2.75 6.75h10.5v9H2.75z"/><path d="M13.25 9.75h4.1l3.4 3.4v2.6h-7.5z"/><circle cx="7" cy="17.25" r="1.75"/><circle cx="17.25" cy="17.25" r="1.75"/></svg>
+                  <svg class="bag-meter__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5.5 12.5l4.2 4.2 8.8-9.4"/></svg>
+                </span>
+                <span data-bind="meter">You’re 150&nbsp;DT away from free shipping.</span>
+              </p>
+              <div class="bag-meter__track" role="progressbar" aria-label="Progress toward free shipping" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span class="bag-meter__fill"></span>
+              </div>
+            </div>
+          </div>
+          <div class="bag-head__cta">
+            <button class="btn btn--primary bag-head__checkout" type="button" data-checkout>Check Out</button>
+          </div>
+        </header>
+
+        <div class="bag-layout">
+          <div class="bag-layout__items">
+            <h2 class="visually-hidden" id="bag-items-title" data-bind="count-label">Items in your bag</h2>
+            <ol class="bag-items" role="list" aria-labelledby="bag-items-title" data-items></ol>
+
+          </div>
+
+          <!-- Order summary (sticky on desktop) -->
+          <aside class="bag-summary" aria-labelledby="bag-summary-title">
+            <div class="bag-summary__panel">
+              <h2 class="bag-summary__title" id="bag-summary-title">Summary</h2>
+
+              <dl class="bag-summary__rows">
+                <div class="bag-sumrow">
+                  <dt>Subtotal</dt>
+                  <dd class="price" data-bind="subtotal">0,000&nbsp;DT</dd>
+                </div>
+                <div class="bag-sumrow bag-sumrow--promo" data-promo-row hidden>
+                  <dt>
+                    <span data-bind="promo-label">Promo</span>
+                    <button class="bag-link" type="button" data-action="promo-remove">Remove<span class="visually-hidden"> promo code</span></button>
+                  </dt>
+                  <dd class="price bag-sumrow__discount" data-bind="discount">−0,000&nbsp;DT</dd>
+                </div>
+                <div class="bag-sumrow">
+                  <dt>Shipping</dt>
+                  <dd data-bind="shipping">Free</dd>
+                </div>
+                <div class="bag-sumrow" data-tax-row hidden>
+                  <dt>Estimated tax</dt>
+                  <dd class="price" data-bind="tax">0,000&nbsp;DT</dd>
+                </div>
+              </dl>
+
+              <form class="bag-promo" data-promo-form novalidate>
+                <label class="bag-promo__label" for="bag-promo-input">Promo code</label>
+                <div class="bag-promo__field">
+                  <input class="input bag-promo__input" id="bag-promo-input" name="promo" type="text" inputmode="text"
+                         autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="32"
+                         placeholder="Enter code" aria-describedby="bag-promo-error">
+                  <button class="bag-promo__apply" type="submit">Apply</button>
+                </div>
+                <p class="field__error bag-promo__error" id="bag-promo-error" role="alert" hidden></p>
+              </form>
+
+              <div class="bag-summary__total">
+                <span>Total</span>
+                <span class="price" data-bind="grand-total">0,000&nbsp;DT</span>
+              </div>
+
+              <button class="btn btn--primary btn--lg btn--block" type="button" data-checkout>Check Out</button>
+              <p class="footnote bag-summary__note">This is a demo store — no payment is taken and nothing ships.</p>
+            </div>
+          </aside>
+
+          <p class="bag-help">
+            Need a hand with your design or order? Email
+            <a href="mailto:hello@elma3.com">hello@elma3.com</a> or
+            <a class="link-arrow" href="about.html#faq">read the FAQ</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VIEW 2 — Empty bag (also the no-JavaScript fallback)
+         ========================================================= -->
+    <section class="bag-view bag-view--empty" data-view="empty" aria-labelledby="bag-empty-title">
+      <div class="container center bag-empty">
+        <!-- "… was removed. Undo" when the last item was just removed (js/bag.js) -->
+        <p class="bag-notice bag-empty__notice" data-empty-notice hidden>
+          <span id="bag-empty-notice-text" data-bind="empty-notice"></span>
+          <button class="bag-link bag-notice__undo" type="button" data-action="empty-undo" aria-describedby="bag-empty-notice-text">Undo</button>
+        </p>
+        <h1 class="headline-lg" id="bag-empty-title" tabindex="-1">Your bag is empty.</h1>
+        <p class="lead measure-sm bag-empty__lead">Every ELMA3 piece is designed by you. Start from a premium blank, or pick a template and make it yours.</p>
+        <div class="cta-row cta-row--center bag-empty__ctas">
+          <a class="btn btn--primary" href="customize.html">Start designing</a>
+          <a class="link-arrow" href="shop.html">Shop pieces</a>
+        </div>
+      </div>
+
+      <div class="container-wide bag-templates-wrap" data-templates-wrap hidden>
+        <div class="bag-templates__head">
+          <h2 class="bag-templates__title">Popular templates.</h2>
+          <a class="link-arrow" href="customize.html#templates">See all templates</a>
+        </div>
+        <ul class="bag-templates" role="list" data-templates></ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VIEW 3 — Demo order confirmation
+         ========================================================= -->
+    <section class="bag-view bag-view--done" data-view="done" aria-labelledby="bag-done-title">
+      <div class="container center bag-done">
+        <div class="bag-done__mark" aria-hidden="true">
+          <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path class="bag-done__tick" d="M15 27.5l7.5 7.5L37.5 19"/></svg>
+        </div>
+        <p class="eyebrow bag-done__number">Order <span data-bind="order-number">ELMA3-000000</span></p>
+        <h1 class="headline-lg" id="bag-done-title" tabindex="-1">Thank you. Your order is in.</h1>
+        <p class="lead measure-sm bag-done__lead">This was a demo, so nothing will be charged or printed. In the real store, every piece you designed would now head to print — made just for you.</p>
+        <p class="bag-done__recap" data-bind="order-recap"></p>
+        <div class="cta-row cta-row--center bag-done__ctas">
+          <a class="btn btn--primary" href="customize.html">Keep designing</a>
+          <a class="link-arrow" href="shop.html">Shop pieces</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Saved designs (hidden when there are none)
+         ========================================================= -->
+    <section class="section section--alt bag-saved" id="saved" aria-labelledby="bag-saved-title" data-saved hidden>
+      <div class="container-wide bag-saved__head" data-reveal>
+        <h2 class="headline-md bag-saved__title" id="bag-saved-title">Your saved designs. <span class="text-muted">Pick up right where you left&nbsp;off.</span></h2>
+        <p class="bag-saved__count" data-bind="saved-count"></p>
+      </div>
+      <div class="scroller scroller--wide bag-saved__scroller" id="bag-saved-scroller" role="list" aria-label="Saved designs" data-saved-list></div>
+      <div class="paddle-nav paddle-nav--wide" data-scroller="#bag-saved-scroller">
+        <button class="paddle" type="button" data-dir="prev" aria-label="Previous designs"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 1.5 1.8 8 8 14.5"/></svg></button>
+        <button class="paddle" type="button" data-dir="next" aria-label="Next designs"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1.5 8.2 8 2 14.5"/></svg></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Demo checkout -->
+  <dialog class="modal bag-modal" id="bag-checkout" aria-labelledby="bag-checkout-title" aria-describedby="bag-checkout-desc">
+    <div class="modal__panel bag-modal__panel">
+      <p class="eyebrow eyebrow--new bag-modal__eyebrow">Demo checkout</p>
+      <h2 class="headline-md modal__title" id="bag-checkout-title" tabindex="-1">This is a demo store.</h2>
+      <p class="bag-modal__lead" id="bag-checkout-desc">No payment is taken and nothing ships. Place a demo order to see how checkout ends.</p>
+
+      <ul class="bag-recap" role="list" aria-label="Order recap" data-recap-items></ul>
+      <dl class="bag-recap__totals" data-recap-totals></dl>
+
+      <div class="bag-modal__actions">
+        <button class="btn btn--primary btn--lg btn--block" type="button" data-place-order>
+          <span class="bag-spinner" aria-hidden="true"></span>
+          <span data-place-label>Place demo order</span>
+        </button>
+        <button class="btn btn--ghost btn--block" type="button" data-close>Keep shopping</button>
+      </div>
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    </div>
+  </dialog>
+
+  <div id="globalfooter-root"></div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Make it yours — ELMA3</title>
+  <meta name="description" content="Premium tees, hoodies, crewnecks, totes and caps you design yourself — in minutes, right in your browser. Designed by you. Made by ELMA3.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Web fonts never block the first paint: the stylesheet loads as "print"
+       and switches to "all" once it arrives (display=swap + the system
+       fallbacks in base.css cover the wait, or a blocked font server). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/garments.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="globalnav-root"></div>
+
+  <main id="main">
+
+    <!-- =====================================================================
+         1. HERO — headline + a live garment that cycles through colors
+         ===================================================================== -->
+    <section class="home-hero" aria-labelledby="home-hero-title">
+      <div class="home-hero__inner container-wide">
+        <div class="home-hero__copy">
+          <p class="home-hero__eyebrow" data-reveal>
+            <span class="eyebrow">ELMA3 Studio</span>
+            <span class="badge badge--pill">New</span>
+          </p>
+          <h1 class="headline-hero home-hero__title" id="home-hero-title" data-reveal data-reveal-delay="1">Make it <span class="text-gradient">yours.</span></h1>
+          <p class="lead home-hero__lead" data-reveal data-reveal-delay="2">Premium pieces you design yourself&nbsp;— in&nbsp;minutes, right in your browser.</p>
+          <div class="cta-row home-hero__ctas" data-reveal data-reveal-delay="3">
+            <a class="btn btn--primary" href="customize.html">Start designing</a>
+            <a class="link-arrow home-hero__link" href="shop.html">Shop the pieces</a>
+          </div>
+        </div>
+
+        <div class="home-hero__visual">
+          <div class="home-hero__stage-wrap" id="home-hero-wrap">
+            <div class="home-hero__glow" id="home-hero-glow" aria-hidden="true"></div>
+            <div class="home-hero__stage" id="home-hero-stage" role="img" aria-label="The Hoodie, designed in ELMA3 Studio"></div>
+            <ul class="home-hero__chips" aria-hidden="true">
+              <li class="home-chip home-chip--text" style="--i:0">
+                <span class="home-chip__inner"><span class="home-chip__icon home-chip__icon--text">Aa</span>Text</span>
+              </li>
+              <li class="home-chip home-chip--stickers" style="--i:1">
+                <span class="home-chip__inner"><span class="home-chip__icon"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 2.2l2.3 4.9 5.3.6-3.9 3.6 1.1 5.3L10 13.9l-4.8 2.7 1.1-5.3-3.9-3.6 5.3-.6z" fill="currentColor"/></svg></span>Stickers</span>
+              </li>
+              <li class="home-chip home-chip--photo" style="--i:2">
+                <span class="home-chip__inner"><span class="home-chip__icon"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="15" height="12" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="7.2" cy="8.3" r="1.5" fill="currentColor"/><path d="M3.4 14.6l4.3-3.9 3 2.6 2.4-2 3.6 3.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg></span>Your photo</span>
+              </li>
+              <li class="home-chip home-chip--sides" style="--i:3">
+                <span class="home-chip__inner"><span class="home-chip__icon"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 8.2a6.2 6.2 0 0 1 11.1-2.6M16 11.8a6.2 6.2 0 0 1-11.1 2.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15.6 2.6v3.3h-3.3M4.4 17.4v-3.3h3.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Front &amp; back</span>
+              </li>
+            </ul>
+          </div>
+          <div class="home-hero__picker">
+            <div class="home-hero__controls">
+              <div class="swatch-row home-hero__swatches" id="home-hero-swatches" role="radiogroup" aria-label="Preview the hoodie in another color"></div>
+              <!-- stops the color cycle and the drifting chips (shown by home.js) -->
+              <button class="home-playpause home-playpause--sm" id="home-hero-pause" type="button" aria-pressed="false" aria-label="Pause animation" hidden>
+                <svg class="home-playpause__pause" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="3.6" y="2.6" width="3" height="10.8" rx="1"/><rect x="9.4" y="2.6" width="3" height="10.8" rx="1"/></svg>
+                <svg class="home-playpause__play" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 3.1v9.8a.9.9 0 0 0 1.37.77l7.9-4.9a.9.9 0 0 0 0-1.54l-7.9-4.9A.9.9 0 0 0 5 3.1z"/></svg>
+              </button>
+            </div>
+            <p class="home-hero__color" id="home-hero-color">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. PRODUCT TILES (Apple homepage tile grid)
+         Text is filled/refreshed from ELMA3.products; art from ELMA3.garments.
+         data-color / data-template / data-views pick the artwork.
+         ===================================================================== -->
+    <section class="home-tiles" aria-labelledby="home-tiles-title">
+      <h2 class="visually-hidden" id="home-tiles-title">The pieces</h2>
+      <div class="tile-grid container-max home-tiles__grid">
+
+        <article class="tile tile--dark home-tile home-tile--wide" data-product="hoodie" data-color="onyx" data-template="noor" data-views="front back" data-reveal>
+          <div class="home-tile__copy stack stack--sm">
+            <p class="eyebrow eyebrow--new home-tile__badge" data-field="badge">New</p>
+            <h3 class="home-tile__title" data-field="name">The Hoodie.</h3>
+            <p class="home-tile__tagline" data-field="tagline">Heavyweight comfort, your way.</p>
+            <p class="home-tile__price" data-field="price">From 129&nbsp;DT</p>
+            <div class="cta-row cta-row--center home-tile__ctas">
+              <a class="link-arrow" data-field="customize" href="customize.html?product=hoodie">Customize<span class="visually-hidden"> The Hoodie</span></a>
+              <a class="link-arrow" data-field="shop" href="shop.html#hoodies">Shop<span class="visually-hidden"> hoodies</span></a>
+            </div>
+          </div>
+          <div class="tile__media home-tile__media" data-field="art"></div>
+        </article>
+
+        <article class="tile home-tile" data-product="tee" data-color="sand" data-template="sunset" data-reveal>
+          <div class="home-tile__copy stack stack--sm">
+            <p class="eyebrow eyebrow--new home-tile__badge" data-field="badge">Bestseller</p>
+            <h3 class="home-tile__title" data-field="name">The Tee.</h3>
+            <p class="home-tile__tagline" data-field="tagline">Heavyweight. Boxy. Yours.</p>
+            <p class="home-tile__price" data-field="price">From 59&nbsp;DT</p>
+            <div class="cta-row cta-row--center home-tile__ctas">
+              <a class="link-arrow" data-field="customize" href="customize.html?product=tee">Customize<span class="visually-hidden"> The Tee</span></a>
+              <a class="link-arrow" data-field="shop" href="shop.html#tees">Shop<span class="visually-hidden"> tees</span></a>
+            </div>
+          </div>
+          <div class="tile__media home-tile__media" data-field="art"></div>
+        </article>
+
+        <article class="tile tile--dark home-tile" data-product="crewneck" data-color="harbor" data-template="varsity" data-reveal data-reveal-delay="1">
+          <div class="home-tile__copy stack stack--sm">
+            <p class="eyebrow eyebrow--new home-tile__badge" data-field="badge" hidden></p>
+            <h3 class="home-tile__title" data-field="name">The Crewneck.</h3>
+            <p class="home-tile__tagline" data-field="tagline">The sweatshirt, perfected — by you.</p>
+            <p class="home-tile__price" data-field="price">From 109&nbsp;DT</p>
+            <div class="cta-row cta-row--center home-tile__ctas">
+              <a class="link-arrow" data-field="customize" href="customize.html?product=crewneck">Customize<span class="visually-hidden"> The Crewneck</span></a>
+              <a class="link-arrow" data-field="shop" href="shop.html#crewnecks">Shop<span class="visually-hidden"> crewnecks</span></a>
+            </div>
+          </div>
+          <div class="tile__media home-tile__media" data-field="art"></div>
+        </article>
+
+        <article class="tile tile--dark home-tile" data-product="tote" data-color="chalk" data-template="market" data-reveal>
+          <div class="home-tile__copy stack stack--sm">
+            <p class="eyebrow eyebrow--new home-tile__badge" data-field="badge" hidden></p>
+            <h3 class="home-tile__title" data-field="name">The Tote.</h3>
+            <p class="home-tile__tagline" data-field="tagline">Carry your story.</p>
+            <p class="home-tile__price" data-field="price">From 39&nbsp;DT</p>
+            <div class="cta-row cta-row--center home-tile__ctas">
+              <a class="link-arrow" data-field="customize" href="customize.html?product=tote">Customize<span class="visually-hidden"> The Tote</span></a>
+              <a class="link-arrow" data-field="shop" href="shop.html#accessories">Shop<span class="visually-hidden"> accessories</span></a>
+            </div>
+          </div>
+          <div class="tile__media home-tile__media" data-field="art"></div>
+        </article>
+
+        <article class="tile home-tile" data-product="cap" data-color="onyx" data-template="capclassic" data-reveal data-reveal-delay="1">
+          <div class="home-tile__copy stack stack--sm">
+            <p class="eyebrow eyebrow--new home-tile__badge" data-field="badge" hidden></p>
+            <h3 class="home-tile__title" data-field="name">The Cap.</h3>
+            <p class="home-tile__tagline" data-field="tagline">Six panels. One of a kind.</p>
+            <p class="home-tile__price" data-field="price">From 45&nbsp;DT</p>
+            <div class="cta-row cta-row--center home-tile__ctas">
+              <a class="link-arrow" data-field="customize" href="customize.html?product=cap">Customize<span class="visually-hidden"> The Cap</span></a>
+              <a class="link-arrow" data-field="shop" href="shop.html#accessories">Shop<span class="visually-hidden"> accessories</span></a>
+            </div>
+          </div>
+          <div class="tile__media home-tile__media" data-field="art"></div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. SCROLL STORY — "Every detail. Your call."
+         Default markup = a static stacked list (reduced motion, short screens,
+         no JS). home.js adds .is-scrolly for the sticky scroll-driven version.
+         ===================================================================== -->
+    <section class="home-story section--dark" id="home-story" aria-labelledby="home-story-title">
+      <header class="home-story__intro container center stack">
+        <p class="eyebrow" data-reveal>How it comes together</p>
+        <h2 class="headline-xl" id="home-story-title" data-reveal data-reveal-delay="1">Every detail. <span class="home-story__accent">Your call.</span></h2>
+        <p class="lead measure-sm" data-reveal data-reveal-delay="2">From the first thread to the final print, every choice is yours to make.</p>
+      </header>
+
+      <div class="home-story__track">
+        <div class="home-story__sticky">
+          <div class="home-story__layout container-wide">
+            <div class="home-story__visual" aria-hidden="true">
+              <div class="home-story__stage-wrap">
+                <div class="home-story__glow"></div>
+                <div class="home-story__stage" id="home-story-stage"></div>
+              </div>
+              <p class="home-story__caption" id="home-story-caption">&nbsp;</p>
+              <div class="home-story__progress">
+                <span class="home-story__seg"><span></span></span>
+                <span class="home-story__seg"><span></span></span>
+                <span class="home-story__seg"><span></span></span>
+                <span class="home-story__seg"><span></span></span>
+              </div>
+            </div>
+
+            <ol class="home-story__steps" role="list">
+              <li class="home-story__step">
+                <span class="home-story__fill" aria-hidden="true"></span>
+                <div class="home-story__text">
+                  <h3 class="home-story__title">Pick your piece.</h3>
+                  <div class="home-story__desc"><div class="home-story__desc-inner"><p>Tee, hoodie, crewneck, tote or cap. Every blank is heavyweight, premium and cut to last.</p></div></div>
+                </div>
+                <div class="home-story__figure" data-story-figure="0"></div>
+              </li>
+              <li class="home-story__step">
+                <span class="home-story__fill" aria-hidden="true"></span>
+                <div class="home-story__text">
+                  <h3 class="home-story__title">Choose your color.</h3>
+                  <div class="home-story__desc"><div class="home-story__desc-inner"><p>From quiet Chalk to deep Burgundy. Tap a color and see it on your piece instantly.</p></div></div>
+                </div>
+                <div class="home-story__figure" data-story-figure="1"></div>
+              </li>
+              <li class="home-story__step">
+                <span class="home-story__fill" aria-hidden="true"></span>
+                <div class="home-story__text">
+                  <h3 class="home-story__title">Say it your way.</h3>
+                  <div class="home-story__desc"><div class="home-story__desc-inner"><p>Add your words, pick a typeface, then curve it, outline it and place it exactly where you want.</p></div></div>
+                </div>
+                <div class="home-story__figure" data-story-figure="2"></div>
+              </li>
+              <li class="home-story__step">
+                <span class="home-story__fill" aria-hidden="true"></span>
+                <div class="home-story__text">
+                  <h3 class="home-story__title">Add your art. Front and back.</h3>
+                  <div class="home-story__desc"><div class="home-story__desc-inner"><p>Drop in a graphic or upload your own photo. Then flip it over — the back is yours too.</p></div></div>
+                </div>
+                <div class="home-story__figure home-story__figure--pair" data-story-figure="3"></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. HOW IT WORKS
+         ===================================================================== -->
+    <section class="section home-how" id="how" aria-labelledby="home-how-title">
+      <div class="container-wide">
+        <header class="center stack">
+          <p class="eyebrow" data-reveal>How it works</p>
+          <h2 class="headline-xl" id="home-how-title" data-reveal data-reveal-delay="1">Three steps. Endless you.</h2>
+        </header>
+
+        <ol class="grid-3 home-how__grid" role="list">
+          <li class="home-how__item" data-reveal>
+            <p class="home-how__num text-gradient" aria-hidden="true">1</p>
+            <h3 class="home-how__title"><span class="visually-hidden">Step 1: </span>Pick.</h3>
+            <p class="home-how__text">Choose a tee, hoodie, crewneck, tote or cap in the color you love.</p>
+            <div class="home-how__art home-how__art--pick" data-how-art="pick"></div>
+          </li>
+          <li class="home-how__item" data-reveal data-reveal-delay="1">
+            <p class="home-how__num text-gradient" aria-hidden="true">2</p>
+            <h3 class="home-how__title"><span class="visually-hidden">Step 2: </span>Design.</h3>
+            <p class="home-how__text">Add text, stickers or your own photo to the front and back. See it live as you go.</p>
+            <div class="home-how__art" data-how-art="design"></div>
+          </li>
+          <li class="home-how__item" data-reveal data-reveal-delay="2">
+            <p class="home-how__num text-gradient" aria-hidden="true">3</p>
+            <h3 class="home-how__title"><span class="visually-hidden">Step 3: </span>Wear.</h3>
+            <p class="home-how__text">We print your piece to order and send it your way. One of one, made by you.</p>
+            <div class="home-how__art" data-how-art="wear"></div>
+          </li>
+        </ol>
+
+        <div class="cta-row cta-row--center home-how__cta" data-reveal>
+          <a class="btn btn--primary" href="customize.html">Open the Studio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. HIGHLIGHTS ("Get the highlights" scroller)
+         ===================================================================== -->
+    <section class="section section--alt home-hl" aria-labelledby="home-hl-title">
+      <div class="container">
+        <h2 class="headline-lg home-hl__title" id="home-hl-title" data-reveal>Made to be worn. <span class="text-muted">And worn. And worn.</span></h2>
+      </div>
+
+      <div class="scroller home-hl__scroller" id="home-highlights" tabindex="0" role="region" aria-label="Highlights" data-reveal="fade">
+        <article class="scroller__item home-hl-card">
+          <p class="home-hl-card__copy"><strong>240 gsm heavyweight cotton.</strong> Dense, soft and built to hold its shape wash after wash.</p>
+          <div class="home-hl-card__art home-hl-card__art--macro" data-hl-art="macro"></div>
+        </article>
+        <article class="scroller__item home-hl-card home-hl-card--dark">
+          <p class="home-hl-card__copy"><strong>Printed to order — nothing wasted.</strong> We only make what you design, so nothing sits in a warehouse.</p>
+          <div class="home-hl-card__art home-hl-card__art--print" data-hl-art="print"></div>
+        </article>
+        <article class="scroller__item home-hl-card">
+          <p class="home-hl-card__copy"><strong>Water-based inks, soft hand feel.</strong> Prints you can barely feel, in colors that stay bright.</p>
+          <div class="home-hl-card__art home-hl-card__art--inks" data-hl-art="inks"></div>
+        </article>
+        <article class="scroller__item home-hl-card home-hl-card--dark">
+          <p class="home-hl-card__copy"><strong>Free returns within 30 days.</strong> Not quite right? Send it back — no questions asked.</p>
+          <div class="home-hl-card__art home-hl-card__art--stat" aria-hidden="true">
+            <span class="home-hl-card__stat text-gradient">30</span>
+            <span class="home-hl-card__unit">days</span>
+          </div>
+        </article>
+        <article class="scroller__item home-hl-card">
+          <p class="home-hl-card__copy"><strong>Your design, saved automatically.</strong> Close the tab, come back later — it’s right where you left it.</p>
+          <div class="home-hl-card__art home-hl-card__art--saved" data-hl-art="saved"></div>
+        </article>
+      </div>
+      <div class="paddle-nav home-hl__paddles" id="home-hl-paddles" data-scroller="#home-highlights">
+        <button class="paddle" type="button" data-dir="prev" aria-label="Previous highlights"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 1.5 1.8 8 8 14.5"/></svg></button>
+        <button class="paddle" type="button" data-dir="next" aria-label="Next highlights"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 1.5 8.2 8 2 14.5"/></svg></button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. GALLERY — templates on their products, two marquee rows
+         ===================================================================== -->
+    <section class="section home-gallery" aria-labelledby="home-gallery-title">
+      <header class="container center stack">
+        <h2 class="headline-xl" id="home-gallery-title" data-reveal>Made in ELMA3 Studio.</h2>
+        <p class="lead measure-sm" data-reveal data-reveal-delay="1">Start from a template, then make every detail your own.</p>
+      </header>
+      <div class="home-gallery__rows" id="home-gallery-rows" data-reveal="fade" data-reveal-delay="2"></div>
+      <div class="home-gallery__controls container-wide">
+        <!-- stops the moving rows (shown by home.js while they move) -->
+        <button class="home-playpause" id="home-gallery-pause" type="button" aria-pressed="false" aria-label="Pause gallery" hidden>
+          <svg class="home-playpause__pause" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="3.6" y="2.6" width="3" height="10.8" rx="1"/><rect x="9.4" y="2.6" width="3" height="10.8" rx="1"/></svg>
+          <svg class="home-playpause__play" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 3.1v9.8a.9.9 0 0 0 1.37.77l7.9-4.9a.9.9 0 0 0 0-1.54l-7.9-4.9A.9.9 0 0 0 5 3.1z"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         7. FINAL CTA
+         ===================================================================== -->
+    <section class="home-cta" aria-labelledby="home-cta-title">
+      <div class="container center stack stack--lg">
+        <h2 class="headline-xl home-cta__title" id="home-cta-title" data-reveal>Your next favorite piece <span class="text-gradient">starts here.</span></h2>
+        <p class="lead measure-sm" data-reveal data-reveal-delay="1">Design it in minutes. We’ll print it just for you.</p>
+        <div class="cta-row cta-row--center" data-reveal data-reveal-delay="2">
+          <a class="btn btn--primary" href="customize.html">Start designing</a>
+          <a class="link-arrow home-cta__link" href="customize.html#templates">Browse templates</a>
+        </div>
+      </div>
+      <div class="home-cta__lineup" id="home-cta-lineup" aria-hidden="true" data-reveal data-reveal-delay="3"></div>
+    </section>
+
+  </main>
+
+  <div id="globalfooter-root"></div>
+</body>
+</html>

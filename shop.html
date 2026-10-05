@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shop — ELMA3</title>
+  <meta name="description" content="Shop ELMA3 tees, hoodies, crewnecks and accessories — premium blanks you customize yourself, printed to order.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Web fonts load without blocking: a slow or offline fonts server never
+       holds up the page (system fonts show until they arrive). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <script src="js/garments.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/shop.js" defer></script>
+</head>
+<body data-page="shop">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="globalnav-root"></div>
+
+  <main id="main">
+
+    <!-- ================================================= 1–3. Store header,
+         category strip and "Just dropped" shelf (Apple Store–style gray page) -->
+    <div class="shop-top">
+
+      <!-- 1. Header -->
+      <header class="shop-hero">
+        <div class="container-wide shop-hero__inner">
+          <h1 class="headline-xl shop-hero__title" data-reveal><span class="shop-hero__strong">Shop.</span> <span class="shop-hero__line">Wear what you mean.</span></h1>
+
+          <ul class="shop-help" role="list" data-reveal data-reveal-delay="1">
+            <li class="shop-help__item">
+              <span class="shop-help__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 15.5 15.5 3.5l5 5-12 12z"/><path d="m7.5 11.5 1.8 1.8M10 9l1.2 1.2M12.5 6.5l1.8 1.8M5 14l1.2 1.2"/></svg>
+              </span>
+              <p class="shop-help__text">Need a hand picking a size?<br><a class="link-arrow" href="customize.html#size">Size guide</a></p>
+            </li>
+            <li class="shop-help__item">
+              <span class="shop-help__icon shop-help__icon--brand" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5c.6 4.6 2.4 6.6 7 7.2-4.6.6-6.4 2.6-7 7.3-.6-4.7-2.4-6.7-7-7.3 4.6-.6 6.4-2.6 7-7.2zM18.5 14c.3 2.2 1.1 3.1 3.2 3.4-2.1.3-2.9 1.2-3.2 3.4-.3-2.2-1.1-3.1-3.2-3.4 2.1-.3 2.9-1.2 3.2-3.4z"/></svg>
+              </span>
+              <p class="shop-help__text">Rather start from scratch?<br><a class="link-arrow" href="customize.html">Open the Studio</a></p>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- 2. Category strip (items rendered by js/shop.js) -->
+      <nav class="shop-cats" aria-label="Shop by category" data-reveal="fade" data-reveal-delay="2">
+        <ul class="shop-cats__list" id="shop-cats" role="list" data-allow-overflow></ul>
+      </nav>
+
+      <!-- 3. Just dropped (templates shelf) -->
+      <section class="shop-shelf shop-latest" aria-labelledby="shop-latest-title">
+        <div class="container-wide">
+          <h2 class="shop-shelf__title" id="shop-latest-title" data-reveal><span class="shop-strong">Just dropped.</span> Fresh designs from the Studio.</h2>
+        </div>
+        <div class="scroller scroller--wide shop-latest__scroller" id="shop-latest" role="list" aria-labelledby="shop-latest-title"></div>
+        <div class="paddle-nav paddle-nav--wide" id="shop-latest-paddles">
+          <button class="paddle" type="button" data-dir="prev" aria-label="Previous drops" aria-controls="shop-latest"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 1.8 8 8 14.5"/></svg></button>
+          <button class="paddle" type="button" data-dir="next" aria-label="Next drops" aria-controls="shop-latest"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 1.5 8.2 8 2 14.5"/></svg></button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================================================= 4. All pieces -->
+    <section class="section shop-pieces" id="pieces" aria-labelledby="shop-pieces-title">
+      <div class="container-wide">
+        <header class="shop-pieces__head" id="shop-pieces-head">
+          <h2 class="headline-lg shop-pieces__title" id="shop-pieces-title" tabindex="-1" data-reveal><span class="shop-strong">All pieces.</span> Premium blanks, ready for&nbsp;your&nbsp;ideas.</h2>
+        </header>
+
+        <div class="shop-toolbar" data-reveal data-reveal-delay="1">
+          <div class="shop-toolbar__filters" data-allow-overflow>
+            <div class="chip-row shop-chips" id="shop-chips" role="group" aria-label="Filter by category"></div>
+          </div>
+          <div class="shop-toolbar__meta">
+            <p class="shop-toolbar__count" id="shop-count" aria-live="polite"></p>
+            <div class="shop-sort">
+              <label class="shop-sort__label" for="shop-sort">Sort by</label>
+              <select class="select shop-sort__select" id="shop-sort">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-grid" id="shop-grid" role="list" aria-label="Products"></div>
+      </div>
+    </section>
+
+    <!-- ================================================= 6. Templates -->
+    <section class="section section--alt shop-templates" id="templates" aria-labelledby="shop-templates-title">
+      <div class="container-wide">
+        <div class="shop-section-head">
+          <h2 class="shop-shelf__title" id="shop-templates-title" data-reveal><span class="shop-strong">Start from a template.</span> Then change everything.</h2>
+          <a class="link-arrow shop-section-head__link" href="customize.html#templates" data-reveal data-reveal-delay="1">See all in the Studio</a>
+        </div>
+        <div class="shop-tpl-grid" id="shop-templates" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ================================================= 7. Saved designs
+         (only shown when ELMA3.designs.all() has records) -->
+    <section class="section shop-saved" id="saved" aria-labelledby="shop-saved-title" hidden>
+      <div class="container-wide">
+        <div class="shop-section-head">
+          <h2 class="shop-shelf__title" id="shop-saved-title"><span class="shop-strong">Your saved designs.</span> Pick up right where you left&nbsp;off.</h2>
+          <p class="caption shop-saved__count" id="shop-saved-count"></p>
+        </div>
+      </div>
+      <div class="scroller scroller--wide shop-saved__scroller" id="shop-saved" role="list" aria-labelledby="shop-saved-title"></div>
+      <div class="paddle-nav paddle-nav--wide" id="shop-saved-paddles">
+        <button class="paddle" type="button" data-dir="prev" aria-label="Previous saved designs" aria-controls="shop-saved"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 1.8 8 8 14.5"/></svg></button>
+        <button class="paddle" type="button" data-dir="next" aria-label="Next saved designs" aria-controls="shop-saved"><svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 1.5 8.2 8 2 14.5"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ================================================= 8. Why ELMA3 -->
+    <section class="section section--dark shop-diff" aria-labelledby="shop-diff-title">
+      <div class="container-wide">
+        <h2 class="shop-shelf__title shop-diff__title" id="shop-diff-title" data-reveal><span class="shop-strong">Why ELMA3.</span> Made for you, made to last.</h2>
+        <ul class="shop-diff__list" id="shop-diff" role="list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================= 5. Quick look -->
+  <!-- tabindex="-1": a pointer-opened Quick look focuses the dialog itself
+       (no ring); a keyboard-opened one starts on × (see js/shop.js). -->
+  <dialog class="modal modal--wide shop-ql" id="shop-quicklook" aria-labelledby="shop-ql-title" tabindex="-1">
+    <!-- The panel doesn't scroll; .shop-ql__scroll does, so × stays pinned. -->
+    <div class="modal__panel shop-ql__panel">
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+      <div class="shop-ql__scroll" id="shop-ql-scroll">
+        <!-- DOM (= reading/Tab) order: picture, info, CTA. On desktop the grid
+             puts the CTA under the picture; on phones it's a sticky bottom bar. -->
+        <div class="shop-ql__layout">
+          <div class="shop-ql__gallery">
+            <div class="shop-ql__stage" id="shop-ql-stage"></div>
+            <div class="segmented shop-ql__views" role="group" aria-label="View">
+              <button type="button" data-view="front" aria-pressed="true">Front</button>
+              <button type="button" data-view="back" aria-pressed="false">Back</button>
+            </div>
+          </div>
+
+          <div class="shop-ql__info">
+            <p class="badge shop-ql__badge" id="shop-ql-badge" hidden></p>
+            <h2 class="headline-md modal__title shop-ql__title" id="shop-ql-title">Product</h2>
+            <p class="shop-ql__tagline" id="shop-ql-tagline"></p>
+            <p class="shop-ql__price" id="shop-ql-price"></p>
+
+            <div class="shop-ql__block">
+              <p class="shop-ql__label">Color <span class="shop-ql__label-value" id="shop-ql-color-name" aria-live="polite"></span></p>
+              <div class="swatch-row shop-ql__swatches" id="shop-ql-swatches" role="radiogroup" aria-label="Garment color"></div>
+            </div>
+
+            <p class="shop-ql__desc" id="shop-ql-desc"></p>
+
+            <div class="shop-ql__block">
+              <div class="shop-ql__label-row">
+                <p class="shop-ql__label" id="shop-ql-sizes-label">Available sizes</p>
+                <a class="link-arrow shop-ql__size-link" id="shop-ql-size-link" href="customize.html#size">Size guide</a>
+              </div>
+              <ul class="shop-ql__sizes" id="shop-ql-sizes" role="list" aria-labelledby="shop-ql-sizes-label"></ul>
+              <p class="footnote shop-ql__size-note" id="shop-ql-size-note" hidden></p>
+            </div>
+
+            <div class="shop-ql__block">
+              <p class="shop-ql__label">Details</p>
+              <ul class="shop-ql__details" id="shop-ql-details" role="list"></ul>
+            </div>
+          </div>
+
+          <div class="shop-ql__cta">
+            <a class="btn btn--primary btn--block" id="shop-ql-cta" href="customize.html">Customize this piece</a>
+            <p class="footnote shop-ql__ship" id="shop-ql-ship"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="globalfooter-root"></div>
+</body>
+</html>

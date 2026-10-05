@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About — ELMA3</title>
+  <meta name="description" content="ELMA3 makes premium blanks and the tools to design them yourself. Our story, how every piece is made, and answers to common questions.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Web fonts load without blocking the first paint (a slow or blocked
+       fonts request must never leave the page blank); system fonts until then. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/about.css">
+  <script src="js/garments.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/about.js" defer></script>
+</head>
+<body data-page="about" class="has-localnav nav-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="globalnav-root"></div>
+
+  <!-- Local nav. It starts dark (it sits on the dark hero); js/about.js
+       switches it light/dark to match the section scrolling underneath. -->
+  <nav class="localnav localnav--dark" aria-label="About ELMA3">
+    <div class="localnav__inner container-wide">
+      <a class="localnav__title" href="#top">About ELMA3</a>
+      <div class="localnav__actions">
+        <a class="localnav__link" href="#story">Story</a>
+        <a class="localnav__link" href="#craft">Craft</a>
+        <a class="localnav__link" href="#process">Process</a>
+        <a class="localnav__link" href="#faq">FAQ</a>
+        <a class="localnav__link" href="#contact">Contact</a>
+        <a class="btn btn--primary btn--sm" href="customize.html">Start designing</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- =============================================================== 1. HERO -->
+    <!-- No id="top" here: the local-nav title's href="#top" then scrolls to
+         the very top of the document (HTML spec), global nav included. -->
+    <section class="section section--dark about-hero" aria-labelledby="about-hero-title">
+      <div class="container center about-hero__head">
+        <h1 class="about-hero__title" id="about-hero-title" data-reveal>
+          <span class="about-hero__line">Designed by you.</span>
+          <span class="about-hero__line"><span class="text-gradient">Made by ELMA3.</span></span>
+        </h1>
+      </div>
+
+      <!-- Five pieces, fanned out. Each [data-garment] is drawn by js/about.js
+           with ELMA3.garments.svg (product / color / optional template). -->
+      <div class="about-fan" data-allow-overflow role="group" aria-label="Five ELMA3 pieces, each designed differently">
+        <div class="about-fan__glow" aria-hidden="true"></div>
+        <div class="about-fan__item about-fan__item--1">
+          <div class="about-fan__art" data-garment="cap" data-color="terracotta" data-template="capclassic"></div>
+        </div>
+        <div class="about-fan__item about-fan__item--2">
+          <div class="about-fan__art" data-garment="tee" data-color="sand" data-template="sunset"></div>
+        </div>
+        <div class="about-fan__item about-fan__item--3">
+          <div class="about-fan__art" data-garment="hoodie" data-color="harbor" data-template="noor"></div>
+        </div>
+        <div class="about-fan__item about-fan__item--4">
+          <div class="about-fan__art" data-garment="crewneck" data-color="burgundy" data-template="varsity"></div>
+        </div>
+        <div class="about-fan__item about-fan__item--5">
+          <div class="about-fan__art" data-garment="tote" data-color="chalk" data-template="market"></div>
+        </div>
+      </div>
+
+      <div class="container center about-hero__foot">
+        <p class="lead about-hero__lead" data-reveal>We believe the clothes you love most should carry <strong>your own ideas</strong>. So we make premium blanks — and the tools to turn each one into something only you could have made.</p>
+        <div class="cta-row cta-row--center about-hero__cta" data-reveal data-reveal-delay="1">
+          <a class="btn btn--primary" href="customize.html">Start designing</a>
+          <a class="link-arrow" href="#story">Read our story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== 2. STORY -->
+    <section class="section about-story" id="story" aria-labelledby="about-story-title">
+      <div class="container">
+        <h2 class="eyebrow" id="about-story-title" data-reveal>Our story</h2>
+        <p class="headline-md about-story__intro" data-reveal data-reveal-delay="1">
+          <strong>Most clothes are made for everyone.</strong> The same shirt, the same colors, the same slogan — made by the thousands, for no one in particular. <strong>ELMA3 turns that around.</strong> We start with you, and make exactly one.
+        </p>
+
+        <div class="grid-2 about-story__cols">
+          <div class="about-story__col" data-reveal>
+            <h3 class="about-story__subhead">Why we exist.</h3>
+            <p>Clothing says something before you do. Yet almost everything on the rack was designed to sell to as many people as possible, which means it says very little about any one of them. We think what you wear should be able to carry <strong>your words, your jokes, your language, your people</strong> — the things that make you, you.</p>
+          </div>
+          <div class="about-story__col" data-reveal data-reveal-delay="1">
+            <h3 class="about-story__subhead">What we build.</h3>
+            <p>So we build two things. <strong>Premium blanks</strong> worth wearing for years — heavyweight tees, fleece hoodies and crewnecks, canvas totes and caps. And <strong>ELMA3 Studio</strong>, a design tool right in your browser, where you choose the color and add text, graphics and your own images, front and back. Then we make that one piece, just for you.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- One blank, five people. Phones: a swipeable row (base .scroller). -->
+      <div class="about-strip scroller" aria-label="The same tee, designed five different ways" role="list">
+        <figure class="about-strip__item scroller__item" role="listitem" data-reveal data-reveal-delay="1">
+          <div class="about-strip__art" data-garment="tee" data-color="chalk" data-template="minimal"></div>
+          <figcaption class="about-strip__caption">Minimal</figcaption>
+        </figure>
+        <figure class="about-strip__item scroller__item" role="listitem" data-reveal data-reveal-delay="2">
+          <div class="about-strip__art" data-garment="tee" data-color="onyx" data-template="statement"></div>
+          <figcaption class="about-strip__caption">Big statement</figcaption>
+        </figure>
+        <figure class="about-strip__item scroller__item" role="listitem" data-reveal data-reveal-delay="3">
+          <div class="about-strip__art" data-garment="tee" data-color="sky" data-template="sunset"></div>
+          <figcaption class="about-strip__caption">Sunset club</figcaption>
+        </figure>
+        <figure class="about-strip__item scroller__item" role="listitem" data-reveal data-reveal-delay="4">
+          <div class="about-strip__art" data-garment="tee" data-color="lilac" data-design="bloom"></div>
+          <figcaption class="about-strip__caption">In full bloom</figcaption>
+        </figure>
+        <figure class="about-strip__item scroller__item" role="listitem" data-reveal data-reveal-delay="4">
+          <div class="about-strip__art" data-garment="tee" data-color="harbor" data-template="nameback" data-view="back"></div>
+          <figcaption class="about-strip__caption">Name on back</figcaption>
+        </figure>
+      </div>
+      <p class="container center about-strip__note" data-reveal>One blank tee. Five people. <span class="about-strip__note-muted">No two alike.</span></p>
+    </section>
+
+    <!-- =============================================================== 3. CRAFT -->
+    <section class="section section--alt about-craft" id="craft" aria-labelledby="about-craft-title">
+      <div class="container center about-section-head">
+        <p class="eyebrow" data-reveal>Craft</p>
+        <h2 class="headline-xl" id="about-craft-title" data-reveal data-reveal-delay="1">Crafted to last.</h2>
+        <p class="lead about-section-head__lead" data-reveal data-reveal-delay="2">Premium fabrics, soft inks and honest construction. A piece you designed yourself deserves to be worn for years.</p>
+      </div>
+
+      <div class="container-wide about-bento">
+
+        <article class="card about-bento__card about-bento__card--cotton" data-reveal>
+          <div class="about-bento__copy">
+            <svg class="about-bento__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19c0-8.3 5.6-14 14-14 0 8.4-5.7 14-14 14Z"/><path d="M5 19 13.5 10.5"/></svg>
+            <h3 class="about-bento__title">Heavyweight cotton</h3>
+            <p class="about-bento__stat"><span class="text-gradient">240</span><span class="about-bento__unit">gsm</span></p>
+            <p class="about-bento__text">Dense jersey for our tees — soft, substantial and made to hold its shape wash after wash.</p>
+            <ul class="about-specs" role="list">
+              <li>Pre-washed for minimal shrinkage</li>
+              <li>1×1 rib crew neck</li>
+              <li>Relaxed fit, dropped shoulders</li>
+            </ul>
+          </div>
+          <div class="about-bento__art" data-allow-overflow data-garment="tee" data-color="sage" data-template="minimal" data-title="Close-up of The Tee in Sage with a small chest print"></div>
+        </article>
+
+        <article class="card about-bento__card about-bento__card--fleece" data-reveal data-reveal-delay="1">
+          <svg class="about-bento__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8.5c1.5-1.6 3-1.6 4.5 0s3 1.6 4.5 0 3-1.6 4.5 0 3 1.6 4.5 0"/><path d="M3 13c1.5-1.6 3-1.6 4.5 0s3 1.6 4.5 0 3-1.6 4.5 0 3 1.6 4.5 0"/><path d="M3 17.5c1.5-1.6 3-1.6 4.5 0s3 1.6 4.5 0 3-1.6 4.5 0 3 1.6 4.5 0"/></svg>
+          <h3 class="about-bento__title">Brushed fleece</h3>
+          <p class="about-bento__stat"><span class="text-gradient">400</span><span class="about-bento__unit">gsm</span></p>
+          <p class="about-bento__text">A soft, brushed-back fleece that makes our hoodies feel warm the moment you put them on.</p>
+        </article>
+
+        <article class="card about-bento__card about-bento__card--inks" data-reveal data-reveal-delay="2">
+          <svg class="about-bento__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5c3.6 4.4 6 7.7 6 10.7a6 6 0 0 1-12 0c0-3 2.4-6.3 6-10.7Z"/><path d="M9.2 14.6a2.9 2.9 0 0 0 2.4 2.6"/></svg>
+          <h3 class="about-bento__title">Water-based inks</h3>
+          <p class="about-bento__phrase">Soft hand. <span class="text-gradient">Vivid color.</span></p>
+          <p class="about-bento__text">Prints that feel like part of the fabric, not a layer on top of it.</p>
+          <ul class="about-inks" role="list" aria-label="Ink colors"></ul>
+        </article>
+
+        <article class="card card--dark about-bento__card about-bento__card--order" data-reveal>
+          <svg class="about-bento__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7.6 12 3.5l8 4.1v8.8L12 20.5l-8-4.1Z"/><path d="M4 7.6 12 11.8l8-4.2M12 11.8v8.7"/></svg>
+          <h3 class="about-bento__title">Printed to order</h3>
+          <p class="about-bento__stat"><span class="text-gradient">0</span><span class="about-bento__unit">overstock</span></p>
+          <p class="about-bento__text">Nothing is made until you design it. No piles of unsold stock, no end-of-season clearance.</p>
+        </article>
+
+        <article class="card about-bento__card about-bento__card--canvas" data-reveal data-reveal-delay="1">
+          <svg class="about-bento__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 8.5h15l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.2a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M8.8 8.5V7a3.2 3.2 0 0 1 6.4 0v1.5"/></svg>
+          <h3 class="about-bento__title">Heavy canvas</h3>
+          <p class="about-bento__stat"><span class="text-gradient">12</span><span class="about-bento__unit">oz</span></p>
+          <p class="about-bento__text">Sturdy cotton canvas totes with long, reinforced handles — built to carry your whole day.</p>
+        </article>
+
+        <article class="card about-bento__card about-bento__card--stitch" data-reveal data-reveal-delay="2">
+          <svg class="about-bento__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 19.5 18 6"/><path d="M16.2 4.4a2.2 2.2 0 0 1 3.4 2.8"/><path d="M4 12.5h2.2M9 12.5h2.2M4 16h2.2" /></svg>
+          <h3 class="about-bento__title">Stitched to last</h3>
+          <p class="about-bento__phrase"><span class="text-nowrap">Double-needle</span> hems.</p>
+          <!-- Two rows of stitching; fabric-colored covers slide off them
+               (transform only) when the card is revealed. The mask clips
+               them, hence data-allow-overflow for the overflow checker. -->
+          <div class="about-stitch" aria-hidden="true">
+            <svg viewBox="0 0 320 72" focusable="false">
+              <rect class="about-stitch__fabric" x="1" y="1" width="318" height="70" rx="14"/>
+              <path class="about-stitch__fold" d="M1 46H319"/>
+              <path class="about-stitch__row" d="M18 22H302"/>
+              <path class="about-stitch__row" d="M18 34H302"/>
+            </svg>
+            <span class="about-stitch__mask" data-allow-overflow><span class="about-stitch__cover"></span><span class="about-stitch__cover about-stitch__cover--2"></span></span>
+          </div>
+          <p class="about-bento__text">Twin rows of stitching at hems and cuffs keep every edge flat and strong.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =============================================================== 4. PROCESS -->
+    <section class="section about-process" id="process" aria-labelledby="about-process-title">
+      <div class="container center about-section-head">
+        <p class="eyebrow" data-reveal>Process</p>
+        <h2 class="headline-xl" id="about-process-title" data-reveal data-reveal-delay="1">From your screen to your wardrobe.</h2>
+        <p class="lead about-section-head__lead" data-reveal data-reveal-delay="2">Four steps between an idea and a piece you can wear. The first one is all yours.</p>
+      </div>
+
+      <div class="container-wide">
+        <div class="about-timeline" data-timeline>
+          <div class="about-timeline__track" aria-hidden="true" data-allow-overflow><span class="about-timeline__fill"></span></div>
+          <ol class="about-timeline__list" role="list">
+            <li class="about-step" data-reveal data-reveal-delay="1">
+              <span class="about-step__node" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4.5 19.5 5.6 15 15.8 4.8a2.1 2.1 0 0 1 3 3L8.6 18l-4.1 1.5Z"/><path d="M14 6.6 17 9.6"/></svg></span>
+              <div class="about-step__body">
+                <p class="about-step__num">Step 1</p>
+                <h3 class="about-step__title">Design</h3>
+                <p class="about-step__text">Pick a piece and a color, then add your words, graphics and photos in ELMA3 Studio.</p>
+              </div>
+            </li>
+            <li class="about-step" data-reveal data-reveal-delay="2">
+              <span class="about-step__node" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 9V4.5h10V9"/><rect x="3.5" y="9" width="17" height="7.5" rx="2"/><path d="M7 14h10v6H7Z"/><path d="M17 11.7h.01"/></svg></span>
+              <div class="about-step__body">
+                <p class="about-step__num">Step 2</p>
+                <h3 class="about-step__title">Print</h3>
+                <p class="about-step__text">We print your design to order with water-based inks. One piece, made for one person.</p>
+              </div>
+            </li>
+            <li class="about-step" data-reveal data-reveal-delay="3">
+              <span class="about-step__node" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6"/><path d="m19.5 19.5-4.6-4.6"/><path d="m8 10.6 1.8 1.8L13.3 9"/></svg></span>
+              <div class="about-step__body">
+                <p class="about-step__num">Step 3</p>
+                <h3 class="about-step__title">Inspect</h3>
+                <p class="about-step__text">Every piece is checked by hand for color, placement and finish before it’s folded.</p>
+              </div>
+            </li>
+            <li class="about-step" data-reveal data-reveal-delay="4">
+              <span class="about-step__node" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 6.5h11v10H3Z"/><path d="M14 10h3.8l3.2 3.4v3.1h-7"/><circle cx="7" cy="17.8" r="1.8"/><circle cx="17.3" cy="17.8" r="1.8"/></svg></span>
+              <div class="about-step__body">
+                <p class="about-step__num">Step 4</p>
+                <h3 class="about-step__title">Deliver</h3>
+                <p class="about-step__text">Packed with care and sent to your door. <span data-about-shipping-short>Free shipping on orders over 150&nbsp;DT.</span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="cta-row cta-row--center about-process__cta" data-reveal>
+          <a class="btn btn--primary" href="customize.html">Start designing</a>
+          <a class="link-arrow" href="shop.html">Browse the pieces</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== 5. VALUES -->
+    <section class="section section--alt about-values" aria-labelledby="about-values-title">
+      <div class="container center about-section-head">
+        <p class="eyebrow" data-reveal>What we believe</p>
+        <h2 class="headline-xl" id="about-values-title" data-reveal data-reveal-delay="1">Built on three ideas.</h2>
+      </div>
+
+      <div class="container-wide about-values__list">
+        <article class="about-value" data-reveal>
+          <div class="about-value__copy">
+            <p class="about-value__index" aria-hidden="true"><span>01</span></p>
+            <h3 class="headline-lg about-value__title">Yours, <span class="about-value__nowrap">only yours.</span></h3>
+            <p class="about-value__text">Every ELMA3 piece starts blank and ends as a <span class="text-nowrap">one-of-one</span>. Your name, your words, your artwork — nobody else walks around in it.</p>
+          </div>
+          <div class="about-value__art" data-garment="tee" data-color="forest" data-template="nameback" data-view="back"></div>
+        </article>
+
+        <article class="about-value about-value--flip" data-reveal>
+          <div class="about-value__copy">
+            <p class="about-value__index" aria-hidden="true"><span>02</span></p>
+            <h3 class="headline-lg about-value__title">Less, <span class="about-value__nowrap">but better.</span></h3>
+            <p class="about-value__text">A small range of essentials, cut from fabrics dense enough to last. Fewer pieces, each one worth designing — and worth keeping.</p>
+          </div>
+          <div class="about-value__art" data-garment="crewneck" data-color="sage"></div>
+        </article>
+
+        <article class="about-value" data-reveal>
+          <div class="about-value__copy">
+            <p class="about-value__index" aria-hidden="true"><span>03</span></p>
+            <h3 class="headline-lg about-value__title">Made <span class="about-value__nowrap">with care.</span></h3>
+            <p class="about-value__text">Each order is printed on its own, checked by a person and packed by hand. Small details, done properly, every single time.</p>
+          </div>
+          <div class="about-value__art" data-garment="hoodie" data-color="sand" data-design="care"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =============================================================== 6. NUMBERS -->
+    <section class="section section--dark about-numbers" aria-labelledby="about-numbers-title">
+      <div class="container center about-section-head">
+        <p class="eyebrow" data-reveal>ELMA3 Studio</p>
+        <h2 class="headline-xl" id="about-numbers-title" data-reveal data-reveal-delay="1">Endless ways to <span class="text-gradient">wear what you mean.</span></h2>
+        <p class="lead about-section-head__lead" data-reveal data-reveal-delay="2">Everything you need to design your own <span class="text-nowrap">one-of-one</span>, right in your browser.</p>
+      </div>
+
+      <!-- Numbers are counted from the live catalog in js/garments.js. -->
+      <div class="container-wide">
+        <ul class="about-stats" role="list">
+          <li class="about-stat" data-reveal>
+            <p class="about-stat__num"><span class="about-stat__value text-gradient" data-count="products" aria-hidden="true">5</span><span class="visually-hidden" data-count-sr="products">5</span></p>
+            <p class="about-stat__label">premium pieces</p>
+          </li>
+          <li class="about-stat" data-reveal data-reveal-delay="1">
+            <p class="about-stat__num"><span class="about-stat__value text-gradient" data-count="colors" aria-hidden="true">14</span><span class="visually-hidden" data-count-sr="colors">14</span></p>
+            <p class="about-stat__label">garment colors</p>
+          </li>
+          <li class="about-stat" data-reveal data-reveal-delay="2">
+            <p class="about-stat__num"><span class="about-stat__value text-gradient" data-count="stickers" aria-hidden="true">22</span><span class="visually-hidden" data-count-sr="stickers">22</span></p>
+            <p class="about-stat__label">original stickers</p>
+          </li>
+          <li class="about-stat" data-reveal data-reveal-delay="3">
+            <p class="about-stat__num"><span class="about-stat__value text-gradient" data-count="fonts" aria-hidden="true">8</span><span class="visually-hidden" data-count-sr="fonts">8</span></p>
+            <p class="about-stat__label">typefaces</p>
+          </li>
+        </ul>
+        <div class="cta-row cta-row--center about-numbers__cta" data-reveal>
+          <a class="btn btn--light" href="customize.html">Open ELMA3 Studio</a>
+          <a class="link-arrow" href="customize.html#templates">See templates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== 7. FAQ -->
+    <section class="section section--alt about-faq" id="faq" aria-labelledby="about-faq-title">
+      <div class="container-wide about-faq__layout">
+        <header class="about-faq__head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="headline-lg" id="about-faq-title">Questions? Answers.</h2>
+          <p class="about-faq__help">Can’t find what you’re looking for? <a class="link-arrow" href="#contact">Contact us</a></p>
+        </header>
+
+        <div class="accordion about-faq__list" data-reveal data-reveal-delay="1">
+          <details id="faq-shipping">
+            <summary>How long does shipping take, and what does it cost?</summary>
+            <div>
+              <p>Every piece is printed to order, so it leaves us a few business days after you place your order. <span data-about-shipping-sentence>Standard delivery anywhere in Tunisia is 8&nbsp;DT, and it’s free on orders over 150&nbsp;DT.</span> You’ll see the exact cost in your bag before you check out.</p>
+            </div>
+          </details>
+          <details id="faq-returns">
+            <summary>Can I return or exchange my order?</summary>
+            <div>
+              <p>Yes. Returns are free within 30 days of delivery — if your piece isn’t quite right, or you’d like a different size, just send it back. And if something arrives damaged, misprinted or not as you designed it, <a href="#contact">get in touch</a> and we’ll make it right with a reprint or a refund.</p>
+            </div>
+          </details>
+          <details id="faq-sizing">
+            <summary>How do I find my size?</summary>
+            <div>
+              <p>Tees, hoodies and crewnecks have a relaxed, slightly boxy fit. The <a href="customize.html#size-guide">size guide</a> in ELMA3 Studio lists the measurements for every size. Between two sizes? Size down for a closer fit, or stay true to size for the relaxed look. Totes and caps are one size, and the cap has an adjustable strap.</p>
+            </div>
+          </details>
+          <details id="faq-care">
+            <summary>How should I care for my piece?</summary>
+            <div>
+              <p>Wash cold and inside out with similar colors. Tumble dry low or hang to dry. Skip the bleach and don’t iron directly on the print — your design will stay vivid for much longer.</p>
+            </div>
+          </details>
+          <details id="faq-printing">
+            <summary>How are designs printed, and how long do they last?</summary>
+            <div>
+              <p>We print with water-based inks directly onto the fabric, then heat-cure every print so the ink bonds with the fibers. The result feels soft, breathes like the rest of the garment and holds up through many washes when cared for as above.</p>
+            </div>
+          </details>
+          <details id="faq-uploads">
+            <summary>Can I upload my own images?</summary>
+            <div>
+              <p>Yes — add your own photos and artwork to the front or back in ELMA3 Studio. High-resolution PNGs with a transparent background look best. Please upload only images you own or have permission to use. We refuse orders with content that is hateful, harassing, violent or otherwise offensive, or that infringes someone else’s rights.</p>
+            </div>
+          </details>
+          <details id="faq-editing">
+            <summary>Can I change my order after I place it?</summary>
+            <div>
+              <p>Before you check out, you can reopen any piece in your <a href="bag.html">bag</a> and keep editing it in the Studio. Once you’ve ordered, printing starts quickly — <a href="#contact">contact us</a> as soon as possible, and if your piece hasn’t been printed yet, we’ll do our best to update it.</p>
+            </div>
+          </details>
+          <details id="faq-payments">
+            <summary>Which payment methods do you accept?</summary>
+            <div>
+              <p>This storefront is a demo: checkout doesn’t take real payments, and no card details are collected or stored. When ELMA3 opens for real orders, the accepted payment methods will be listed at checkout.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== 8. CONTACT -->
+    <section class="section about-contact" id="contact" aria-labelledby="about-contact-title">
+      <div class="container-wide about-contact__layout">
+
+        <div class="about-contact__intro" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="headline-xl about-contact__title" id="about-contact-title">Let’s talk.</h2>
+          <p class="lead about-contact__lead">A question about an order, help with a design, or an idea for a collaboration — we’d love to hear from you.</p>
+
+          <dl class="about-contact__channels">
+            <div class="about-contact__channel">
+              <dt>Email</dt>
+              <dd>
+                <a class="about-contact__mail" href="mailto:hello@elma3.com">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m4 7.5 8 5.8 8-5.8"/></svg>
+                  hello@elma3.com
+                </a>
+              </dd>
+            </div>
+            <div class="about-contact__channel">
+              <dt>Follow</dt>
+              <!-- Placeholder profiles: until each href="#" becomes a real profile
+                   URL, js/common.js answers a click with a "Coming soon" toast. -->
+              <dd class="about-social">
+                <a class="about-social__link" href="#">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>
+                  Instagram
+                </a>
+                <a class="about-social__link" href="#">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 3.5v11.2a3.3 3.3 0 1 1-3.3-3.3"/><path d="M13.5 3.5c.4 2.6 2.4 4.6 5 4.9"/></svg>
+                  TikTok
+                </a>
+                <a class="about-social__link" href="#">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M11.4 11.4 9.2 20.2"/><path d="M10.4 15.3c.6.3 1.3.4 2 .4 2.6 0 4.3-1.9 4.3-4.2 0-2.5-2-4.3-4.7-4.3-2.8 0-4.6 1.9-4.6 4.1 0 .9.3 1.6.8 2.1"/></svg>
+                  Pinterest
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="about-contact__panel" data-reveal data-reveal-delay="1">
+          <form class="about-form" id="about-contact-form" novalidate data-about-form="contact" aria-labelledby="about-form-title">
+            <h3 class="about-form__title" id="about-form-title">Send us a message</h3>
+            <div class="about-form__grid">
+              <div class="field">
+                <label class="field__label" for="contact-name">Name</label>
+                <input class="input" id="contact-name" name="name" type="text" autocomplete="name" required data-rule="name">
+                <p class="field__error" id="contact-name-error" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="contact-email">Email</label>
+                <input class="input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" required data-rule="email">
+                <p class="field__error" id="contact-email-error" hidden></p>
+              </div>
+              <div class="field about-form__full">
+                <label class="field__label" for="contact-topic">Topic</label>
+                <select class="select" id="contact-topic" name="topic" required data-rule="topic">
+                  <option value="" selected>Choose a topic</option>
+                  <option value="order">An order or shipping</option>
+                  <option value="design">Help with a design</option>
+                  <option value="returns">Returns and exchanges</option>
+                  <option value="collab">Collaborations and press</option>
+                  <option value="other">Something else</option>
+                </select>
+                <p class="field__error" id="contact-topic-error" hidden></p>
+              </div>
+              <div class="field about-form__full">
+                <label class="field__label" for="contact-message">Message</label>
+                <textarea class="textarea" id="contact-message" name="message" rows="5" maxlength="2000" required data-rule="message" aria-describedby="contact-message-hint"></textarea>
+                <p class="field__hint" id="contact-message-hint">At least 10 characters.</p>
+                <p class="field__error" id="contact-message-error" hidden></p>
+              </div>
+            </div>
+            <div class="about-form__footer">
+              <button class="btn btn--primary about-form__submit" type="submit">Send message</button>
+              <p class="caption about-form__demo">Demo form — messages aren’t sent yet.</p>
+            </div>
+          </form>
+
+          <div class="about-success" id="about-contact-success" hidden>
+            <span class="about-success__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m6 12.5 4 4 8-9"/></svg></span>
+            <h3 class="about-success__title" tabindex="-1" data-success-title>Thanks for your message.</h3>
+            <p class="about-success__text">Everything checked out. This storefront is a demo, so your message wasn’t actually sent — for now, please email <a href="mailto:hello@elma3.com">hello@elma3.com</a>.</p>
+            <button class="btn btn--secondary about-success__again" type="button" data-form-reset="contact">Send another message</button>
+          </div>
+        </div>
+
+        <!-- Newsletter mini form (same validation pattern as the contact form) -->
+        <div class="about-newsletter" data-reveal data-reveal-delay="1">
+          <form class="about-newsletter__form" id="about-newsletter-form" novalidate data-about-form="newsletter" aria-labelledby="about-newsletter-title">
+            <h3 class="about-newsletter__title" id="about-newsletter-title">Be the first to know.</h3>
+            <p class="about-newsletter__text">New colors, new pieces and new Studio features. Occasional emails, unsubscribe anytime.</p>
+            <div class="field">
+              <label class="field__label" for="newsletter-email">Email</label>
+              <div class="about-newsletter__row">
+                <input class="input" id="newsletter-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" required data-rule="email">
+                <button class="btn btn--dark about-newsletter__submit" type="submit">Subscribe</button>
+              </div>
+              <p class="field__error" id="newsletter-email-error" hidden></p>
+            </div>
+            <p class="caption about-form__demo">Demo form — no emails are sent yet.</p>
+          </form>
+          <div class="about-success about-success--compact" id="about-newsletter-success" hidden>
+            <span class="about-success__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m6 12.5 4 4 8-9"/></svg></span>
+            <div>
+              <h3 class="about-success__title" tabindex="-1">You’re on the list.</h3>
+              <p class="about-success__text">Thanks for subscribing. This is a demo, so no emails will be sent yet.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="globalfooter-root"></div>
+</body>
+</html>

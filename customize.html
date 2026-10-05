@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Studio — ELMA3</title>
+  <meta name="description" content="ELMA3 Studio: pick a premium blank, choose its color, then add your own text, graphics and photos to the front and back. Designed by you. Made by ELMA3.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Web fonts load without blocking the page: the Studio works with system
+       fonts until they arrive (and if they never do). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Cairo:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Pacifico&amp;family=Permanent+Marker&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/customize.css">
+  <script src="js/garments.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/customize.js" defer></script>
+</head>
+<body data-page="customize" class="has-localnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="globalnav-root"></div>
+
+  <nav class="localnav" aria-label="Studio">
+    <div class="localnav__inner container-wide">
+      <a class="localnav__title" href="#main">Studio</a>
+      <div class="localnav__actions studio-navactions">
+        <span class="studio-navprice price"><span class="visually-hidden">Total: </span><span id="studio-nav-price">59&nbsp;DT</span></span>
+        <button class="btn btn--primary btn--sm" type="button" data-action="add-to-bag" data-cta>Add to Bag</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="studio" tabindex="-1">
+    <div class="studio-layout container-max">
+
+      <!-- ============================================================ STAGE -->
+      <div class="studio-stage-col">
+        <div class="studio-stage" id="studio-stage" data-allow-overflow>
+          <!-- Only the canvas is the keyboard "application"; the hint and the
+               toolbar below are ordinary buttons. -->
+          <div class="studio-canvas" id="studio-canvas" role="application" tabindex="0"
+               aria-label="Design canvas" aria-describedby="studio-stage-status studio-kbd-help">
+            <svg class="studio-svg" id="studio-svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <g id="st-defs"></g>
+              <g id="st-base"></g>
+              <defs><clipPath id="st-print-clip"><rect id="st-print-rect" x="0" y="0" width="0" height="0"/></clipPath></defs>
+              <g id="st-layers" clip-path="url(#st-print-clip)"></g>
+              <g id="st-overlay"></g>
+              <g id="st-ui">
+                <rect id="st-print-guide" class="st-print-guide" x="0" y="0" width="0" height="0" rx="4" fill="none"
+                      vector-effect="non-scaling-stroke" pointer-events="none"/>
+                <line id="st-guide-v" class="st-guide" vector-effect="non-scaling-stroke" pointer-events="none" display="none"/>
+                <line id="st-guide-h" class="st-guide" vector-effect="non-scaling-stroke" pointer-events="none" display="none"/>
+                <g id="st-sel" display="none">
+                  <g class="st-sel-inner">
+                    <rect class="st-sel-halo" vector-effect="non-scaling-stroke" pointer-events="none"/>
+                    <rect class="st-sel-box" vector-effect="non-scaling-stroke" pointer-events="none"/>
+                    <line class="st-sel-stem-halo" vector-effect="non-scaling-stroke" pointer-events="none"/>
+                    <line class="st-sel-stem" vector-effect="non-scaling-stroke" pointer-events="none"/>
+                    <!-- × first: the corner handles drawn after it win where their hit areas overlap -->
+                    <g class="st-handle st-handle--del" data-handle="del"><circle class="st-hit"/><circle class="st-del-bg" vector-effect="non-scaling-stroke"/><path class="st-del-x" vector-effect="non-scaling-stroke"/></g>
+                    <g class="st-handle" data-handle="nw"><circle class="st-hit"/><circle class="st-knob" vector-effect="non-scaling-stroke"/></g>
+                    <g class="st-handle" data-handle="ne"><circle class="st-hit"/><circle class="st-knob" vector-effect="non-scaling-stroke"/></g>
+                    <g class="st-handle" data-handle="se"><circle class="st-hit"/><circle class="st-knob" vector-effect="non-scaling-stroke"/></g>
+                    <g class="st-handle" data-handle="sw"><circle class="st-hit"/><circle class="st-knob" vector-effect="non-scaling-stroke"/></g>
+                    <g class="st-handle st-handle--rot" data-handle="rot"><circle class="st-hit"/><circle class="st-knob" vector-effect="non-scaling-stroke"/><path class="st-rot-icon" vector-effect="non-scaling-stroke"/></g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Empty-side hint: a small pill docked above the toolbar -->
+          <div class="studio-hint" id="studio-hint" role="group" aria-label="Start your design" hidden>
+            <p class="studio-hint__text" aria-hidden="true">Start with</p>
+            <div class="studio-hint__actions">
+              <button class="studio-hint__btn" type="button" data-action="add-text">Text</button>
+              <button class="studio-hint__btn" type="button" data-action="open-stickers">Sticker</button>
+              <button class="studio-hint__btn" type="button" data-action="upload">Image</button>
+            </div>
+          </div>
+
+          <!-- Drag & drop target -->
+          <div class="studio-drop" id="studio-drop" aria-hidden="true">
+            <div class="studio-drop__inner">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4.5 14.5v3a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5v-3"/></svg>
+              <p class="studio-drop__title">Drop your image to add it</p>
+              <p class="studio-drop__sub">PNG, JPEG, WebP or SVG · up to 15 MB</p>
+            </div>
+          </div>
+
+          <!-- Busy overlay (image processing) -->
+          <div class="studio-busy" id="studio-busy" hidden>
+            <span class="studio-spinner" aria-hidden="true"></span>
+            <span id="studio-busy-text">Preparing your image…</span>
+          </div>
+
+          <!-- Floating toolbar -->
+          <div class="studio-toolbar" role="group" aria-label="Canvas tools">
+            <div class="segmented studio-views" role="group" aria-label="Side of the piece">
+              <button type="button" data-view="front" aria-pressed="true">Front<span class="studio-count" data-count="front" hidden>0</span></button>
+              <button type="button" data-view="back" aria-pressed="false">Back<span class="studio-count" data-count="back" hidden>0</span></button>
+            </div>
+            <span class="studio-toolbar__sep" aria-hidden="true"></span>
+            <button class="studio-tool" type="button" data-action="undo" aria-label="Undo" title="Undo (Ctrl+Z)" disabled></button>
+            <button class="studio-tool" type="button" data-action="redo" aria-label="Redo" title="Redo (Ctrl+Shift+Z)" disabled></button>
+            <span class="studio-toolbar__sep" aria-hidden="true"></span>
+            <button class="studio-tool studio-tool--zoom" type="button" data-action="zoom" aria-label="Zoom in" title="Zoom"></button>
+            <button class="studio-tool studio-tool--reset" type="button" data-action="reset-view" aria-label="Reset view" title="Reset view" disabled></button>
+            <button class="studio-tool" type="button" data-action="download" aria-label="Download image (PNG)" title="Download image"></button>
+          </div>
+
+          <p class="visually-hidden" id="studio-stage-status"></p>
+          <p class="visually-hidden" id="studio-kbd-help">Select a layer on the canvas or in the Layers list. With a layer selected: arrow keys move it (hold Shift for bigger steps), Delete removes it, Control or Command plus D duplicates it, the square bracket keys change its stacking order and Escape deselects. Control or Command plus Z undoes, plus Shift plus Z redoes.</p>
+        </div>
+      </div>
+
+      <!-- ============================================================ STEPS -->
+      <div class="studio-steps">
+
+        <header class="studio-intro">
+          <p class="eyebrow">ELMA3 Studio</p>
+          <h1 class="headline-lg studio-intro__title">Make it <span class="text-gradient">yours.</span></h1>
+          <p class="studio-intro__lead">Pick a piece, choose its color, then add your words, graphics and photos — front and back. We print it and ship it.</p>
+          <div class="studio-intro__row">
+            <button class="btn btn--secondary btn--sm studio-surprise" type="button" data-action="surprise"></button>
+            <span class="studio-intro__note">Your design saves automatically in this browser.</span>
+          </div>
+        </header>
+
+        <!-- 1. Piece -->
+        <section class="studio-step" id="piece" aria-labelledby="piece-title" data-reveal>
+          <h2 class="headline-sm studio-step__title" id="piece-title">Piece. <span class="text-muted">Which one is yours?</span></h2>
+          <div class="studio-pieces" id="studio-pieces" role="radiogroup" aria-labelledby="piece-title"></div>
+        </section>
+
+        <!-- 2. Color -->
+        <section class="studio-step" id="color" aria-labelledby="color-title" data-reveal>
+          <h2 class="headline-sm studio-step__title" id="color-title">Color. <span class="text-muted">Pick your canvas.</span></h2>
+          <p class="studio-label"><span class="studio-label__key">Color</span> — <span id="studio-color-name">Chalk</span></p>
+          <div class="swatch-row studio-colors" id="studio-colors" role="radiogroup" aria-label="Garment color"></div>
+        </section>
+
+        <!-- 3. Design -->
+        <section class="studio-step" id="design" aria-labelledby="design-title" data-reveal>
+          <h2 class="headline-sm studio-step__title" id="design-title">Design. <span class="text-muted">Say it your way.</span></h2>
+          <p class="studio-step__lead" id="studio-design-lead">Add layers to the <strong>front</strong>. Drag them on the piece to move, use the corners to resize and the top handle to rotate.</p>
+
+          <div class="studio-add" role="group" aria-label="Add to your design">
+            <button class="studio-add__btn" type="button" data-action="add-text"><span class="studio-add__icon" data-icon="text"></span><span class="studio-add__label">Text</span></button>
+            <button class="studio-add__btn" type="button" data-action="toggle-drawer" data-drawer="stickers" aria-expanded="false" aria-controls="studio-drawer-stickers"><span class="studio-add__icon" data-icon="sticker"></span><span class="studio-add__label">Sticker</span></button>
+            <button class="studio-add__btn" type="button" data-action="upload" aria-label="Upload image"><span class="studio-add__icon" data-icon="image"></span><span class="studio-add__label"><span class="studio-add__long">Upload image</span><span class="studio-add__short" aria-hidden="true">Image</span></span></button>
+            <button class="studio-add__btn" type="button" data-action="toggle-drawer" data-drawer="templates" aria-expanded="false" aria-controls="templates"><span class="studio-add__icon" data-icon="templates"></span><span class="studio-add__label">Templates</span></button>
+          </div>
+          <p class="studio-upload-note">Upload PNG, JPEG, WebP or SVG up to 15 MB — or drop a file onto the piece. Only upload images you own or have permission to use.</p>
+          <input class="visually-hidden" type="file" id="studio-file" accept="image/png,image/jpeg,image/webp,image/svg+xml" tabindex="-1" aria-hidden="true">
+
+          <!-- Sticker drawer -->
+          <div class="studio-drawer" id="studio-drawer-stickers" data-drawer-panel="stickers" hidden>
+            <div class="studio-drawer__head">
+              <h3 class="studio-drawer__title">Stickers</h3>
+              <button class="studio-drawer__close" type="button" data-action="close-drawer" aria-label="Close stickers"></button>
+            </div>
+            <p class="studio-drawer__lead">Tap a graphic to add it. You can recolor it after.</p>
+            <div class="studio-stickers" id="studio-stickers"></div>
+          </div>
+
+          <!-- Template drawer -->
+          <div class="studio-drawer" id="templates" data-drawer-panel="templates" hidden>
+            <div class="studio-drawer__head">
+              <h3 class="studio-drawer__title">Templates</h3>
+              <button class="studio-drawer__close" type="button" data-action="close-drawer" aria-label="Close templates"></button>
+            </div>
+            <div class="studio-drawer__bar">
+              <p class="studio-drawer__lead">Start from a ready-made design, then make it yours.</p>
+              <button class="btn btn--ghost btn--sm studio-surprise" type="button" data-action="surprise"></button>
+            </div>
+            <div class="studio-templates" id="studio-templates"></div>
+            <div class="studio-saved" id="studio-saved" hidden>
+              <h4 class="studio-saved__title">Your saved designs</h4>
+              <div class="studio-saved__list" id="studio-saved-list"></div>
+            </div>
+          </div>
+
+          <!-- Inspector for the selected layer (filled by JS) — right under the add
+               row, so it's close at hand when a layer is picked on the canvas -->
+          <section class="studio-inspector" id="studio-inspector" aria-label="Edit layer" hidden></section>
+
+          <!-- Layers -->
+          <div class="studio-layers-wrap">
+            <div class="studio-layers-head">
+              <h3 class="studio-layers-title" id="studio-layers-title">Layers</h3>
+              <span class="studio-layers-count" id="studio-layers-count">Front · 0</span>
+            </div>
+            <ul class="studio-layers" id="studio-layers" role="list" aria-labelledby="studio-layers-title"></ul>
+            <div class="studio-layers-empty" id="studio-layers-empty">
+              <p class="studio-layers-empty__title">Nothing on the <span data-side-name>front</span> yet.</p>
+              <p class="studio-layers-empty__text">Add text, a sticker or your own image — or start from a template.</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 4. Size -->
+        <section class="studio-step" id="size" aria-labelledby="size-title" data-reveal>
+          <h2 class="headline-sm studio-step__title" id="size-title">Size. <span class="text-muted">Find your fit.</span></h2>
+          <div class="studio-sizes" id="studio-sizes" role="radiogroup" aria-labelledby="size-title"></div>
+          <p class="studio-size-note" id="studio-size-note" hidden></p>
+          <p class="studio-size-error" id="studio-size-error" role="alert" hidden>Choose a size to continue.</p>
+          <button class="link-arrow studio-sizeguide-link" type="button" data-action="size-guide">Size guide</button>
+
+          <div class="studio-qty">
+            <div>
+              <p class="studio-qty__label" id="studio-qty-label">Quantity</p>
+              <p class="studio-qty__hint">Up to 10 per design.</p>
+            </div>
+            <div class="stepper" role="group" aria-labelledby="studio-qty-label">
+              <button type="button" data-action="qty-dec" aria-label="Decrease quantity">&minus;</button>
+              <output class="stepper__value" id="studio-qty" aria-live="polite">1</output>
+              <button type="button" data-action="qty-inc" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Summary -->
+        <section class="studio-step studio-step--summary" id="summary" aria-labelledby="summary-title" data-reveal>
+          <h2 class="headline-sm studio-step__title" id="summary-title">Summary. <span class="text-muted">Your piece, your way.</span></h2>
+          <div class="studio-summary">
+            <div class="studio-summary__views">
+              <figure class="studio-summary__view">
+                <div class="studio-summary__art" id="studio-sum-front"></div>
+                <figcaption>Front</figcaption>
+              </figure>
+              <figure class="studio-summary__view">
+                <div class="studio-summary__art" id="studio-sum-back"></div>
+                <figcaption>Back</figcaption>
+              </figure>
+            </div>
+            <div class="studio-summary__info">
+              <h3 class="studio-summary__title" id="studio-sum-title">The Tee</h3>
+              <p class="studio-summary__meta" id="studio-sum-meta">Chalk · Size M</p>
+            </div>
+            <dl class="studio-summary__lines" id="studio-sum-lines"></dl>
+            <div class="studio-summary__total">
+              <span>Total</span>
+              <span class="price" id="studio-sum-total">59&nbsp;DT</span>
+            </div>
+            <div class="studio-summary__ctas">
+              <button class="btn btn--primary btn--lg btn--block" type="button" data-action="add-to-bag" data-cta>Add to Bag</button>
+              <button class="btn btn--secondary btn--block" type="button" data-action="save-design">Save design</button>
+            </div>
+            <div class="studio-summary__links">
+              <button class="link-arrow" type="button" data-action="download">Download image</button>
+              <button class="link-arrow" type="button" data-action="start-over">Start over</button>
+            </div>
+            <p class="studio-summary__note" id="studio-sum-note">Free shipping over 150&nbsp;DT · Free returns</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Phone: fixed purchase bar -->
+    <div class="studio-bar" id="studio-bar">
+      <div class="studio-bar__price">
+        <span class="studio-bar__label">Total</span>
+        <span class="price" id="studio-bar-price">59&nbsp;DT</span>
+      </div>
+      <button class="btn btn--primary studio-bar__cta" type="button" data-action="add-to-bag" data-cta>Add to Bag</button>
+    </div>
+  </main>
+
+  <!-- ============================================================ DIALOGS -->
+  <dialog class="modal studio-dialog" id="studio-confirm" aria-labelledby="studio-confirm-title" aria-describedby="studio-confirm-body">
+    <div class="modal__panel stack">
+      <h2 class="headline-sm modal__title" id="studio-confirm-title">Replace your design?</h2>
+      <p class="text-muted" id="studio-confirm-body">This replaces everything on the front and back.</p>
+      <div class="cta-row studio-dialog__actions">
+        <button class="btn btn--primary" type="button" data-confirm>Replace</button>
+        <button class="btn btn--ghost" type="button" data-close autofocus>Cancel</button>
+      </div>
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal studio-dialog" id="studio-save" aria-labelledby="studio-save-title">
+    <form class="modal__panel stack" id="studio-save-form" novalidate>
+      <h2 class="headline-sm modal__title" id="studio-save-title">Save your design</h2>
+      <p class="text-muted">Saved designs stay in this browser, so you can come back to them any time.</p>
+      <div class="field">
+        <label class="field__label" for="studio-save-name">Design name</label>
+        <input class="input" id="studio-save-name" type="text" maxlength="60" autocomplete="off" required aria-describedby="studio-save-error">
+        <p class="field__error" id="studio-save-error" hidden>Give your design a name.</p>
+      </div>
+      <div class="cta-row studio-dialog__actions">
+        <button class="btn btn--primary" type="submit" id="studio-save-submit">Save</button>
+        <button class="btn btn--secondary" type="button" id="studio-save-new" hidden>Save as new</button>
+        <button class="btn btn--ghost" type="button" data-close>Cancel</button>
+      </div>
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="studio-sizeguide" aria-labelledby="studio-sizeguide-title">
+    <div class="modal__panel stack">
+      <h2 class="headline-md modal__title" id="studio-sizeguide-title">Size guide</h2>
+      <p class="text-muted">Garment measurements, taken flat. Our pieces are cut relaxed — size down for a closer fit.</p>
+      <div class="studio-sg-controls">
+        <div class="segmented" role="group" aria-label="Piece" id="studio-sg-piece"></div>
+        <div class="segmented" role="group" aria-label="Units" id="studio-sg-units">
+          <button type="button" data-unit="cm" aria-pressed="true">cm</button>
+          <button type="button" data-unit="in" aria-pressed="false">in</button>
+        </div>
+      </div>
+      <div class="studio-sg-table-wrap">
+        <table class="studio-sg-table" id="studio-sg-table"></table>
+      </div>
+      <p class="footnote">All measurements are approximate and may vary by up to 2 cm (¾ in). Chest is measured straight across, armpit to armpit; length from the highest point of the shoulder to the hem.</p>
+      <!-- Small screens: the panel scrolls, so a close button at the end too -->
+      <button class="btn btn--secondary btn--block studio-sg-done" type="button" data-close>Done</button>
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+    </div>
+  </dialog>
+
+  <div id="globalfooter-root"></div>
+</body>
+</html>
